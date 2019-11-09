@@ -1,0 +1,7 @@
+<h1>Add an onsen</h1>
+
+<%= simple_form_for [@onsen] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.submit "Add your onsen", class: "btn btn-primary" %>
+<% end %>

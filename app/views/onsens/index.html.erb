@@ -1,0 +1,11 @@
+<h1>Onsen is life</h1>
+
+<ul>
+  <% @onsens.each do |onsen| %>
+  <li><%= onsen.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to new_onsen_path(@onsen) do %>
+<h4>Add new onsen</h4>
+<% end %>

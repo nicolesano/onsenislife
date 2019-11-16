@@ -1,11 +1,34 @@
-<h1>Onsen is life</h1>
-
-<ul>
-  <% @onsens.each do |onsen| %>
-  <li><%= onsen.name %></li>
-  <% end %>
-</ul>
-
-<%= link_to new_onsen_path(@onsen) do %>
-<h4>Add new onsen</h4>
+<div class="banner">
+  <h1 class="title">Onsen is life</h1>
+  <div class="button">
+    <%= link_to new_onsen_path(@onsen) do %>
+    <h4>Add new onsen</h4>
+  </div>
 <% end %>
+
+</div>
+
+<div class="card-container">
+  <% @onsens.each do |onsen| %>
+    <%= link_to onsen_path(onsen) do %>
+      <div class="card">
+        <div class="name">
+          <%= onsen.name %>
+        </div>
+        <%= cl_image_tag onsen.photo, crop: :fill %>
+        <div class="bottom-info">
+          <div class="address">
+            <%= onsen.address %>
+          </div>
+          <div class="rating">
+            <% if onsen.rating? %>
+              <% onsen.rating.times do |i| %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

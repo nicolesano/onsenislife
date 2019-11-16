@@ -1,4 +1,24 @@
 <h1><%= @onsen.name %></h1>
-<h3><%= @onsen.address %></h1>
+<div class="subtitle">
+  <h3 class="location-subtitle"><%= @onsen.address %></h3>
+  <div class="rating">
+      <% if @onsen.rating? %>
+        <% @onsen.rating.times do |i| %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+<%= cl_image_tag @onsen.photo, height: 300, width: 500, crop: :fill %>
+
+<div class="button">
+  <%= link_to edit_onsen_path(@onsen) do %>
+  <h4>Edit onsen</h4>
+</div>
+<% end %>
+
+<%= link_to onsen_path, method: :delete do %>
+<p>Delete</p>
+<% end %>
 
 <%= link_to 'Back', onsens_path %>

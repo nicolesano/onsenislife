@@ -1,6 +1,8 @@
 class OnsensController < ApplicationController
+  before_action :set_onsen, only: [:show, :edit, :update, :destroy]
+
   def index
-    @onsens = Onsen.all
+    @onsens = Onsen.all.sort_by &:name
   end
 
   def show
@@ -20,9 +22,29 @@ class OnsensController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @onsen.update(onsen_params)
+      redirect_to onsen_path(@onsen)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @onsen.destroy
+    redirect_to onsens_path
+  end
+
   private
 
   def onsen_params
-    params.require(:onsen).permit(:name, :address)
+    params.require(:onsen).permit(:name, :address, :photo, :rating)
+  end
+
+  def set_onsen
+    @onsen = Onsen.find(params[:id])
   end
 end

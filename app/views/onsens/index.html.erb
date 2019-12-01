@@ -1,11 +1,12 @@
 <div class="banner">
-  <h1 class="title">Onsen is life</h1>
-  <div class="button">
-    <%= link_to new_onsen_path(@onsen) do %>
-    <h4>Add new onsen</h4>
+  <div class="heading">
+    <div class="header"><h1>Onsen is life</h1></div>
+    <div class="button">
+      <%= link_to new_onsen_path(@onsen) do %>
+      <h4>Add new onsen</h4>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
 </div>
 
 <div class="card-container">
@@ -15,7 +16,14 @@
         <div class="name">
           <%= onsen.name %>
         </div>
-        <%= cl_image_tag onsen.photo, crop: :fill %>
+        <div class="photo-with-description">
+          <%= cl_image_tag onsen.photo, crop: :fill %>
+          <div class="description">
+            <% if onsen.description? %>
+              <p><%= onsen.description.truncate_words(25) %></p>
+            <% end %>
+          </div>
+        </div>
         <div class="bottom-info">
           <div class="address">
             <%= onsen.address %>

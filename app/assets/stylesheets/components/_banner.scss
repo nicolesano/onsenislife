@@ -1,40 +1,76 @@
 .banner {
-  background-image: url('https://lh3.googleusercontent.com/lVb6OAmBI6cFnPM87xTlGUiY-J9I9T7hPKJqz2SQaFwxdtW1epj2lVnnVRsWijlaspE33pHhD8dTTi7nz-7Bbp92bMoyOIFj0DYhAxItUrMfnhgGBymhdmVZ0aWRhBlHC23HQ4y9DG9xEQkIzUwzrOm_uqPHaG86HOuVrTdJGD3p6PeGF9ViljImOGpxZV3qgBgbyIr3lsGji_zCqqB_jYC7k8HL9QPMLbEs8j9lq4ilegBARFiOro3m0n7zE0TxO1CUN-afZPmzr17jK9d3t7BT9LC1bmV1NcrTGSGbMcfuF7EwScFzCk-xV54khLTICoqJFsI0a_oJXV-WVGmD6Uc0b_Ra_7c5hlNiELFioB_TXSE44iwqyh_ZdwmZqxdLcIx2OlVLGj1al_F8UuOBV0FPRVDuaYPH0Wmhd8WJoA3M7pbwL3UVoXswRu-RMEp20dArNErZ53FnjgrlVKsk6tyoSXJ4_DCS2wcVvKEoMkzQjnK7-V92gijF9wZklCN2Sa9_JjkkSbBbmSGNmmrLnYnPNQPjK6TX0TfDWVXVOfwJJQUd4Amxo4bIcF-6LOSX-iUPfvOtHxV6r_F4V5LMdPXsAe1_6PJeJ7_RmLSZiJFIHCbC-ufhV8mcehknAugwl6lzhKrdz0LJEpTJSOYu2fWyKgQJQB-Xk_hfKNonr1LkuABQUi7ZJuM=w1762-h1174-no');
+  background-image: 
+  linear-gradient(
+    to right bottom,
+    rgba(230, 112, 214, 0.6),
+    rgba(69, 54, 129, 0.8),
+  ),
+  url('https://lh3.googleusercontent.com/lVb6OAmBI6cFnPM87xTlGUiY-J9I9T7hPKJqz2SQaFwxdtW1epj2lVnnVRsWijlaspE33pHhD8dTTi7nz-7Bbp92bMoyOIFj0DYhAxItUrMfnhgGBymhdmVZ0aWRhBlHC23HQ4y9DG9xEQkIzUwzrOm_uqPHaG86HOuVrTdJGD3p6PeGF9ViljImOGpxZV3qgBgbyIr3lsGji_zCqqB_jYC7k8HL9QPMLbEs8j9lq4ilegBARFiOro3m0n7zE0TxO1CUN-afZPmzr17jK9d3t7BT9LC1bmV1NcrTGSGbMcfuF7EwScFzCk-xV54khLTICoqJFsI0a_oJXV-WVGmD6Uc0b_Ra_7c5hlNiELFioB_TXSE44iwqyh_ZdwmZqxdLcIx2OlVLGj1al_F8UuOBV0FPRVDuaYPH0Wmhd8WJoA3M7pbwL3UVoXswRu-RMEp20dArNErZ53FnjgrlVKsk6tyoSXJ4_DCS2wcVvKEoMkzQjnK7-V92gijF9wZklCN2Sa9_JjkkSbBbmSGNmmrLnYnPNQPjK6TX0TfDWVXVOfwJJQUd4Amxo4bIcF-6LOSX-iUPfvOtHxV6r_F4V5LMdPXsAe1_6PJeJ7_RmLSZiJFIHCbC-ufhV8mcehknAugwl6lzhKrdz0LJEpTJSOYu2fWyKgQJQB-Xk_hfKNonr1LkuABQUi7ZJuM=w1762-h1174-no');
   background-repeat: no-repeat;
-  height: 500px;
+  height: 90vh;
   background-size: cover;
+  background-position: top;
   position: relative;
   margin-bottom: 8px;
+  clip-path: polygon(0 20%, 20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%);
 }
 
-.title {
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  bottom: 80px;
-  font-size: 80px;
-  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header h1 {
+  font-size: 96px;
+  padding: 16px;
+  color: $white;
   justify-content: bottom;
   font-family: 'Pacifico', cursive;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  top: 60%;
-  left: 30%;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  animation-name: increasingOpacity;
+  animation-duration: 3s;
 }
 
 .button h4 {
-  background-color: #3BA99C;
-  color: white;
+  background-color: rgb(29, 109, 214);
+  border: 2px solid rgb(29, 109, 214);
+  color: $white;
   font-weight: regular;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 16px;
+  border-radius: 8px;
   font-size: 20px;
-  width: 175px;
+  width: 200px;
   text-align: center;
-  position: absolute;
-  top: 82%;
-  left: 40%;
+  transition: all .2s;
 }
 
 .button h4:hover {
-  background-color: rgb(255,255,255);
-  border: 2px solid #3BA99C;
-  color: #3BA99C;
+  background-color: $white;
+  border: 2px solid rgb(29, 109, 214);
+  color: rgb(29, 109, 214);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 4px rgba(0,0,0,.2);
+}
+
+.button h4:active {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 4px rgba(0,0,0,.2);
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+@keyframes increasingOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

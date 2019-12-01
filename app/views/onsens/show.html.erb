@@ -10,6 +10,7 @@
     </div>
 </div>
 <%= cl_image_tag @onsen.photo, height: 300, width: 500, crop: :fill %>
+<p><%= @onsen.description %></p>
 
 <div class="button">
   <%= link_to edit_onsen_path(@onsen) do %>

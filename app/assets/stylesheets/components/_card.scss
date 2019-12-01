@@ -2,18 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0px auto;
-  width: 900px;
+  width: 75vw;
+  justify-content: center;
+  position: absolute;
+  top: 65%;
+  right: 12%;
 }
 
 .card {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
-  height: 336px;
-  width: 275px;
-  border-radius: 4px;
+  height: 380px;
+  width: 20vw;
+  border-radius: 8px;
   align-items: center;
   margin: 8px;
   position: relative;
+  transition-duration: 1s;
 }
 
 .card-container a:hover {
@@ -34,11 +39,19 @@
   padding: 8px;
 }
 
+.name {
+  font-size: 28px;
+}
+
+.bottom-info {
+  font-size: 20px;
+}
+
 .rating {
   position: absolute;
   right: 2%;
   padding: 8px;
-  color: #A4BAB7;
+  color: #EFEA5A;
 }
 
 .address {
@@ -48,6 +61,30 @@
 }
 
 .name:hover, .address:hover {
-  color: #A4BAB7;
+  color: rgb(147, 28, 151);
   text-decoration: none;
+}
+
+.photo-with-description {
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  top: 72%;
+  left: 5%;
+  font-size: 14px;
+  color: $white;
+  line-height: 1;
+  margin: 0;
+  width: 90%;
+  background: black;
+  opacity: .6;
+  padding: 4px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  transition-duration: 1s;
 }

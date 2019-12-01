@@ -41,7 +41,7 @@ class OnsensController < ApplicationController
   private
 
   def onsen_params
-    params.require(:onsen).permit(:name, :address, :photo, :rating)
+    params.require(:onsen).permit(:name, :address, :photo, :rating, :description)
   end
 
   def set_onsen

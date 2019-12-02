@@ -36,36 +36,6 @@
   animation-duration: 3s;
 }
 
-.button h4 {
-  background-color: rgb(29, 109, 214);
-  border: 2px solid rgb(29, 109, 214);
-  color: $white;
-  font-weight: regular;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 20px;
-  width: 200px;
-  text-align: center;
-  transition: all .2s;
-}
-
-.button h4:hover {
-  background-color: $white;
-  border: 2px solid rgb(29, 109, 214);
-  color: rgb(29, 109, 214);
-  transform: translateY(-5px);
-  box-shadow: 0 4px 4px rgba(0,0,0,.2);
-}
-
-.button h4:active {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 4px rgba(0,0,0,.2);
-}
-
-.button a:hover {
-  text-decoration: none;
-}
-
 @keyframes increasingOpacity {
   0% {
     opacity: 0;
